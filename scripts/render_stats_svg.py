@@ -1,7 +1,9 @@
+
 #!/usr/bin/env python3
 """
 Render the streak / numbers card from data/contributions.json (written daily by
-fetch_contributions.py) as a terminal-window SVG that sits beside avi-ascii.svg.
+fetch_contributions.py) as a terminal-window SVG that sits beside
+karthickraja0277685-del's ASCII portrait.
 
 The canvas is the same size as the portrait (840 x 880) so the two panels line
 up when the README shows them side by side at equal widths. Fonts are sized for
@@ -21,7 +23,7 @@ import sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 SRC = sys.argv[1] if len(sys.argv) > 1 else os.path.join(HERE, "..", "data", "contributions.json")
-OUT = sys.argv[2] if len(sys.argv) > 2 else os.path.join(HERE, "..", "stats.svg")
+OUT = sys.argv[2] if len(sys.argv) > 2 else os.path.join(HERE, "..", "info-card.svg")
 
 BG = "#0d1117"
 BG2 = "#111722"
@@ -32,7 +34,7 @@ INK = "#e6edf3"
 GREEN = "#39d353"
 BAR = "#26a641"
 
-W, H = 840, 880                      # == avi-ascii.svg canvas
+W, H = 840, 880                      # == ASCII portrait canvas
 PAD = 20
 TITLEBAR_H = 30
 COLS, ROWS = 2, 3
@@ -98,7 +100,7 @@ parts = [
 for i, dot in enumerate(["#ff5f56", "#ffbd2e", "#27c93f"]):
     parts.append(f'<circle cx="{PAD + i*16}" cy="{TITLEBAR_H/2}" r="5" fill="{dot}"/>')
 parts.append(f'<text x="{W/2}" y="{TITLEBAR_H/2 + 4}" fill="{MUTED}" font-size="12" '
-             f'text-anchor="middle">avi@github: ~$ ./stats.sh</text>')
+             f'text-anchor="middle">karthickraja0277685-del@github: ~$ ./stats.sh</text>')
 
 # ---- stat tiles ----------------------------------------------------------
 for i, (label, value, suffix, caption, accent) in enumerate(tiles):
