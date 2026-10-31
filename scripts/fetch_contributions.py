@@ -1,3 +1,4 @@
+
 #!/usr/bin/env python3
 """
 Scrape real daily contribution counts from GitHub's public, unauthenticated
@@ -17,7 +18,7 @@ import sys
 import requests
 from bs4 import BeautifulSoup
 
-USERNAME = os.environ.get("GH_PROFILE_USER", "AVIVASHISHTA29")
+USERNAME = os.environ.get("GH_PROFILE_USER", "karthickraja0277685-del")
 URL = f"https://github.com/users/{USERNAME}/contributions"
 OUT_PATH = os.path.join(os.path.dirname(__file__), "..", "data", "contributions.json")
 
